@@ -7,7 +7,7 @@ function onPageLoaded() {
 
         // Карточка
         const div = document.createElement("div");
-        const textp = document.createElement("p");
+        const textp = document.createElement("span");
         div.classList.add("card");
         textp.classList.add("card__content");
         const newTodo = input.value;

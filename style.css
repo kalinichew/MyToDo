@@ -13,7 +13,6 @@ body {
 }
   .main_container {
     padding: 0;
-    
   }
 
 /* Форма для ввода */
@@ -123,16 +122,12 @@ body {
     transform: scale(1.05);
   }
   .card__content {
-    width: 320px;
+    max-width: 320px;
     font-weight: 400;
     color: #000000;
     font-size: 22px;
     font-family: 'Caveat', cursive;
-    /* hyphens: auto;
-    hyphenate-limit-chars: 6 3 3;
-    hyphenate-limit-lines: 2;   
-    hyphenate-limit-last: always;
-    hyphenate-limit-zone: 8%; */
+    word-break: break-all;
   }
   /* ============================================================================================== */
 
