@@ -9,15 +9,29 @@ function onPageLoaded() {
         // Карточка
         const mainCard = document.createElement("div");
         const contentCard = document.createElement("span");
+        const btnContainer = document.createElement("div");
+        const btnEdit = document.createElement("a");
+
+        
+        btnContainer.classList.add("btn_Container");
         mainCard.classList.add("card");
         contentCard.classList.add("card__content");
+        btnEdit.classList.add("btn_edit");
+
+
+        btnEdit.append('Редактировать');
         let inputData = input.value;
         contentCard.append(inputData);
 
         //Кнопка удалить
         const closeBtn = document.createElement('div');
         closeBtn.classList.add("btn_close")
-        mainCard.appendChild(closeBtn);
+
+        
+        mainCard.appendChild(btnEdit);
+        mainCard.appendChild(btnContainer);
+        btnContainer.appendChild(closeBtn);
+        
 
         //Добавление карточки
         divCard.appendChild(mainCard).append(contentCard);
@@ -33,8 +47,17 @@ function onPageLoaded() {
             item.addEventListener("click", modalShow);
         }
 
+        //Слушанье крестика на закрытие
+        function listenDeleteTodo(element) {
+            element.addEventListener("click", (event) => {
+                mainCard.remove();
+                event.stopPropagation();
+            });
+        }
+
+
         //Запуск функции модального окна
-        modalLisen(mainCard);
+        modalLisen(btnEdit);
 
         function modalShow(){
 
@@ -54,8 +77,8 @@ function onPageLoaded() {
             modalCancel.classList.add('cancel');
             modalText.classList.add('textinput');
             modalText.name = 'text';
-            modalText.cols = 43;
-            modalText.rows = 10;
+            modalText.cols = 35;
+            modalText.rows = 5;
 
 
             divCard.appendChild(modalContainer);
@@ -111,14 +134,7 @@ function onPageLoaded() {
 
     }
 
-    //Функция удаления карточки
-    function listenDeleteTodo(element) {
-        element.addEventListener("click", (event) => {
-            element.parentElement.remove();
-            event.stopPropagation();
-        });
-    }
-    
+
     //Создание карточки
     document.getElementById('btnInput').onclick = () => {
         createTodo();
