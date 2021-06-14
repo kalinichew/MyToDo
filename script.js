@@ -3,20 +3,23 @@ function onPageLoaded() {
     const input = document.querySelector("input");
     const divCard = document.querySelector("div.card_container");
     
-
     function createTodo() {
-
+        
         // Карточка
         const mainCard = document.createElement("div");
         const contentCard = document.createElement("span");
         const btnContainer = document.createElement("div");
         const btnEdit = document.createElement("a");
+        const checkBox = document.createElement('input');
 
         
         btnContainer.classList.add("btn_Container");
         mainCard.classList.add("card");
         contentCard.classList.add("card__content");
         btnEdit.classList.add("btn_edit");
+        checkBox.classList.add("check")
+        checkBox.type = "checkbox";
+        checkBox.checked;
 
 
         btnEdit.append('Редактировать');
@@ -28,8 +31,9 @@ function onPageLoaded() {
         closeBtn.classList.add("btn_close")
 
         
-        mainCard.appendChild(btnEdit);
+        btnContainer.appendChild(checkBox);
         mainCard.appendChild(btnContainer);
+        mainCard.appendChild(btnEdit);
         btnContainer.appendChild(closeBtn);
         
 
@@ -55,19 +59,19 @@ function onPageLoaded() {
             });
         }
 
-
+        modalLisen(btnEdit)
         //Запуск функции модального окна
-        modalLisen(btnEdit);
+
 
         function modalShow(){
 
-            let modalContainer = document.createElement('div'),
-                modalClose = document.createElement('div'),
-                modalContent = document.createElement('div'),
-                modalText = document.createElement('textarea'),
-                modalOk = document.createElement('div'),
-                modalCancel = document.createElement('div'),
-                controlBtn = document.createElement('div');
+        let modalContainer = document.createElement('div'),
+            modalClose = document.createElement('div'),
+            modalContent = document.createElement('div'),
+            modalText = document.createElement('textarea'),
+            modalOk = document.createElement('div'),
+            modalCancel = document.createElement('div'),
+            controlBtn = document.createElement('div');
             
             modalContainer.classList.add('modal-container');
             modalClose.classList.add('close');
@@ -128,6 +132,7 @@ function onPageLoaded() {
               modalOk.addEventListener('click', editModal);
               modalClose.addEventListener('click', closesModal);
               openModal();
+
         }
 
 
