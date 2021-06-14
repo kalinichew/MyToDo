@@ -110,7 +110,7 @@ body {
 
   .card {
     margin: 10px;
-    padding: 20px 10px 20px 20px;
+    padding: 10px 10px 20px 20px;
     width: 350px;
     min-height: 200px;
     display: grid;
@@ -140,32 +140,68 @@ body {
   /* ============================================================================================= */
 .btn_Container {
   display: flex;
-  justify-content:flex-end;
-  width: 310px;
+  justify-content:space-between;
+  height: 0;
 }
 
 .btn_close{
-    left: 150px;
-    cursor: pointer;
-    height: 20px;
-    width: 20px;
+  background: none;
+  color: transparent;
+  cursor: pointer;
+  margin-top: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  line-height: 75px;
+  outline: none;
+  overflow: hidden;
+  position:inherit;
+  text-transform: uppercase;
+  transform: translate(-10%, -10%);
+  transition: all 0.2s ease-in;
+  width: 30px;
+  height: 30px;
 }
 
 .btn_close:before,
 .btn_close:after {
-    content: "";
-    position: absolute;
-    width: 32px;
-    height: 2px;
-    background: rgb(241, 9, 9);
+  background-color: white;
+  content: 'БУ';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform-origin: center left;
+  transition: all 0.2s ease-in;
+  width: 141.4214px;
+  z-index: -1;
 }
 
 .btn_close:before {
-    transform: rotate(45deg);
+  top: 0;
+  transform: rotate(45deg);
 }
 
 .btn_close:after {
-    transform: rotate(-45deg);
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.btn_close:hover {
+    color: #8A2387;
+    border-radius: 8px;
+}
+
+.btn_close:hover::before,
+.btn_close:hover::after {
+  
+  height: 50px;
+  transform: rotate(0deg);
+}
+
+.check {
+  margin-top: 15px;
+  width: 20px;
+  height: 20px;
 }
 /* ========================================================================== */
 
@@ -173,23 +209,20 @@ body {
 /* Кнопка редактирования формы */
 /* ========================================================================== */
 .btn_edit {
-  border: 0;
-  top: 5px;
-  left: 215px;
-  text-align: center;
-  display: flex;
-  position: absolute;
-  padding: 4px;
+  cursor:pointer;
   color: #000000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  margin-left: 175px;
   background-color: #fdf9e2;
-  font-family: 'Amatic SC', cursive;
-  font-size: 20px;
   border-radius: 8px;
-  font-weight: 600;
   text-decoration: none;
-  transition: box-shadow 200ms ease-out;
-  cursor: pointer;
+  font-family: 'Caveat', cursive;
+  height: 30px;
+  width: 95px;
 }
+
 /* ========================================================================== */
 
 
@@ -257,7 +290,7 @@ body {
     position: absolute;
     width: 32px;
     height: 2px;
-    background: rgb(241, 9, 9);
+    background: rgb(252, 251, 251);
 }
 
 .close:before {
@@ -331,7 +364,7 @@ body {
      .controlBtn {
       display: inline-block;
       text-align: center;
-      margin-left: 12px;
+      margin: 0 30px 0 30px;
     }
     .cancel {
       padding: 8px 25px 8px 25px;
