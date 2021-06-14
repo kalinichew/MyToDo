@@ -160,12 +160,13 @@ body {
   transition: all 0.2s ease-in;
   width: 30px;
   height: 30px;
+  
 }
 
 .btn_close:before,
 .btn_close:after {
   background-color: white;
-  content: 'БУ';
+  content: '';
   display: block;
   height: 1px;
   left: 0;
@@ -182,21 +183,16 @@ body {
 }
 
 .btn_close:after {
-  bottom: 0;
+  bottom: 0; 
   transform: rotate(-45deg);
 }
 
 .btn_close:hover {
     color: #8A2387;
     border-radius: 8px;
+    
 }
 
-.btn_close:hover::before,
-.btn_close:hover::after {
-  
-  height: 50px;
-  transform: rotate(0deg);
-}
 
 .check {
   margin-top: 15px;
@@ -358,6 +354,10 @@ body {
     .card_container {
       justify-content: center;
     }
+
+    .modal-content {
+      height: 278px;
+    }
   }
 
   @media (max-width: 380px) {
@@ -373,5 +373,9 @@ body {
       padding: 8px 14px 8px 14px;
       margin-right: 3px;
       margin-bottom: 3px;
+    }
+
+    .modal-content {
+      height: 350px;
     }
   }
